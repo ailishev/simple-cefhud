@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+	color: #fff;
+	background-color: #333;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	overflow: hidden;
+	margin: 0;
+	white-space: nowrap;
+	font-family: 'Roboto', sans-serif;
+}
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+#hud-container {
+	position: absolute;
+	top: 3%;
+	width: 90px;
+	height: 80px;
+	display: flex;
+	font-size: 16px;
+	right: 0%;
+}
+.hud_logo {
+	width: 50px;
+	height: 50px;
+	right: 50px;
+	position: absolute;
+}
+.server-container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	position: absolute;
+	right: 130px;
+	top: 10px;
+}
+.server-time {
+	display: flex;
+	align-items: center;
+	position: relative;
+	left: -50%;
+}
+.server-time svg {
+	fill: white;
+	position: relative;
+	margin-right: 10px;
+}
+
+.server-playerid {
+	display: flex;
+	align-items: center;
+	position: relative;
+	left: -20%;
+}
+#hud-container::after {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 80%;
+	background-color: #fff;
+	right: 130px;
+}
+.server-online {
+	display: flex;
+	align-items: center;
+	position: relative;
+	left: -35%;
+	top: 15%;
+}
+
+.server-online svg {
+	fill: white;
+	position: relative;
+	margin-right: 10px;
+}
+.weapon-container {
+	position: absolute;
+	top: 100px;
+	right: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	width: 120px;
+	height: 70px;
+	background-color: transparent;
+	font-size: 20px;
+	background-image: linear-gradient(to right, #0072ff, #00c6ff);
+
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.weapon-container img {
+	width: 60px;
+	height: 60px;
+}
+.users-container {
+	position: absolute;
+	top: 80px;
+	right: 180px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	width: 220px;
+	height: auto;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.hud__contentbar {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 20vh;
+}
+.hud__bar_item {
+	color: white;
+	font-weight: 500;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+	padding: 0.95vh 1vh;
+}
+.hud__bar_img {
+	width: 2vh;
+	height: 1.5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	margin-left: 10px;
+}
+.hud__nbar {
+	width: 19vh;
+	height: 1.2vh;
+	border-radius: 0.4vh;
+	background-color: rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+.hud__nbar .hp {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	transition: 0.3s;
+	border-radius: 0.4vh;
+	background-color: rgba(255, 51, 51, 1);
+}
+.hud__nbar .ap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	transition: 0.3s;
+	border-radius: 0.4vh;
+	background-color: #0171ff;
+}
+.hud__nbar .ep {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	transition: 0.3s;
+	border-radius: 0.4vh;
+	background-color: #78be25;
+}
+.hud__nbar .vp {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	transition: 0.3s;
+	border-radius: 0.4vh;
+	background-color: #ddff33;
+}
+.weapon-ammo {
+	position: absolute;
+	top: 190px;
+	right: 45px;
+}
+.info-player {
+	position: absolute;
+	top: 22vh;
+	margin-left: 15vw;
+}
+.user-money {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.8vw;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+}
+.user-money img {
+	width: 2.5vh;
+	height: 4vh;
+	margin-left: 10px;
+	order: 2;
+}
+.user-bank {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.8vw;
+	font-weight: bold;
+	display: flex;
+	margin-top: 20px;
+	align-items: center;
+}
+.user-bank img {
+	width: 2.5vh;
+	height: 4vh;
+	margin-left: 10px;
+	order: 2;
+}
+.stars-info {
+	position: relative;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.stars-active {
+	filter: invert(33%) sepia(100%) saturate(2000%) hue-rotate(190deg)
+		brightness(90%) contrast(100%);
+}
