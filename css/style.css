@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+}
 body {
 	color: #fff;
-	background-color: #333;
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -15,8 +20,9 @@ body,
 html {
 	width: 100%;
 	height: 100%;
+	
 }
-#hud-container {
+.hud-container {
 	position: absolute;
 	top: 3%;
 	width: 90px;
@@ -26,9 +32,10 @@ html {
 	right: 0%;
 }
 .hud_logo {
-	width: 50px;
-	height: 50px;
-	right: 50px;
+	width: 80px;
+	height: 80px;
+	right: 30px;
+	top: -5px;
 	position: absolute;
 }
 .server-container {
@@ -44,6 +51,12 @@ html {
 	align-items: center;
 	position: relative;
 	left: -50%;
+}
+.multiplier-container {
+	display: flex;
+	align-items: center;
+	position: relative;
+	left: -80%;
 }
 .server-time svg {
 	fill: white;
@@ -94,7 +107,20 @@ html {
 
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.multiplier {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	background-color: transparent;
+	font-size: 15px;
+	background-image: linear-gradient(to right, #0072ff, #00c6ff);
 
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .weapon-container img {
 	width: 60px;
 	height: 60px;
@@ -193,33 +219,25 @@ html {
 	top: 22vh;
 	margin-left: 15vw;
 }
-.user-money {
-	font-family: 'Roboto', sans-serif;
-	font-size: 1.8vw;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-}
-.user-money img {
-	width: 2.5vh;
-	height: 4vh;
-	margin-left: 10px;
-	order: 2;
-}
+.user-money,
 .user-bank {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.8vw;
 	font-weight: bold;
 	display: flex;
-	margin-top: 20px;
 	align-items: center;
 }
+.user-money img,
 .user-bank img {
 	width: 2.5vh;
 	height: 4vh;
 	margin-left: 10px;
 	order: 2;
 }
+.user-bank {
+	margin-top: 20px;
+}
+
 .stars-info {
 	position: relative;
 	margin-top: 10px;
@@ -228,4 +246,154 @@ html {
 .stars-active {
 	filter: invert(33%) sepia(100%) saturate(2000%) hue-rotate(190deg)
 		brightness(90%) contrast(100%);
+}
+.help-panel {
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #fff;
+	text-shadow: 1px 1px 4px #000;
+}
+
+.help-line {
+	margin-top: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.help-line:first-child {
+	margin-top: 0px;
+}
+
+.help-key {
+	min-width: 20px;
+	padding: 2px 4px;
+	margin-right: 5px;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	text-transform: uppercase;
+	text-align: center;
+}
+#bottomInfoPanel {
+	position: absolute;
+	display: flex;
+}
+.fps {
+	position: absolute;
+	display: flex;
+}
+#location {
+	width: auto;
+	height: 1.8vw;
+	margin-top: 0.7vw;
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 0.5vw;
+	align-items: center;
+	justify-content: space-around;
+	box-sizing: border-box;
+}
+#location .city {
+	font-family: Montserrat;
+	font-size: 0.8vw;
+	color: white;
+	font-weight: 800;
+	margin-right: 0.8vw;
+}
+#location .address {
+	font-family: Montserrat;
+	font-size: 0.7vw;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.5);
+}
+.animateOpacityOn {
+	opacity: 0;
+	animation: open 1s;
+	animation-fill-mode: forwards;
+}
+.car-hud {
+	position: absolute;
+	right: 1vw;
+	bottom: 0;
+	width: 18vw;
+	text-align: center;
+	transform: scale(0.86);
+	font-family: 'Roboto', sans-serif;
+}
+.car-hud .speed {
+	width: 15.5vw;
+	height: 15.5vw;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+}
+.car-hud .engine {
+	width: 3.5vw;
+	height: 17.7vw;
+	margin: 0 -2.3vw;
+	transform: rotate(0deg);
+	font-family: 'Roboto', sans-serif;
+}
+.car-hud .fuel {
+	width: 3.5vw;
+	height: 17.7vw;
+	margin: 0 -2.3vw;
+	transform: rotate(161deg);
+	font-family: 'Roboto', sans-serif;
+}
+.car-hud .speed-info {
+	margin: 0 0 -12.5vw 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	color: white;
+}
+.car-hud .speed-info .info {
+	line-height: 1.8vw;
+}
+.car-hud .speed-info .info p:first-child {
+	font-size: 2.3vw;
+}
+.car-hud .speed-info .info p:last-child {
+	font-size: 0.8vw;
+	opacity: 0.4;
+}
+.car-hud .speed-info .info-car {
+	display: flex;
+	justify-content: center;
+}
+.car-hud .speed-info .info-car .bulb {
+	margin: 0 0.5vw;
+}
+.car-hud .speed-info .info-car .bulb svg {
+	width: 1.3vw;
+	height: 1.6vw;
+}
+.car-hud .speed-info .info-car .bulb:first-child .active path {
+	fill: rgb(30, 255, 0);
+}
+.car-hud .speed-info .info-car .bulb:nth-child(2) .active path {
+	fill: rgb(255, 0, 0);
+}
+.car-hud .speed-info .info-car .bulb:last-child .active path {
+	fill: rgb(255, 153, 0);
+}
+.car-hud .engine-icon {
+	width: 1.6vw;
+	height: 1.6vw;
+	position: absolute;
+	bottom: 1.3vw;
+}
+.car-hud .fuel-icon {
+	width: 1.8vw;
+	height: 1.8vw;
+	position: absolute;
+	bottom: 1vw;
+}
+
+@keyframes open {
+	100% {
+		opacity: 1;
+	}
 }
